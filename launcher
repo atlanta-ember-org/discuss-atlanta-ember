@@ -12,7 +12,7 @@ docker_rec_version='1.2.0'
 config_file=containers/"$config".yml
 cidbootstrap=cids/"$config"_bootstrap.cid
 local_discourse=local_discourse
-image=samsaffron/discourse:1.0.8
+image=atlanta-ember-org/discuss-atlanta-ember-app
 docker_path=`which docker.io || which docker`
 
 if [ "${SUPERVISED}" = "true" ]; then
@@ -316,7 +316,7 @@ RUBY
 
 
       output="$freed" | awk '{sum=$1;hum[1024**3]="GB"; hum[1024**2]="MB"; hum[1024]="KB"; for (x=1024**3;x>=1024; x/=1024){ if (sum>=x) { printf "%.2f %s\n",sum/x,hum[x];break }}}'
-      [ -z "$output" ] && { 
+      [ -z "$output" ] && {
         [[ $freed > 0 ]] && { echo "./launcher cleanup cleared up $freed of disk space."; } || { echo "./launcher cleanup has finished, no files were removed."; }
       } || { echo "./launcher cleanup cleared up $freed of disk space."; }
     else

@@ -47,6 +47,6 @@ def build(path, tag, is_base)
 end
 
 build("base",$base_image,true)
-build("discuss_atlanta_ember",$image,false)
+build("discourse",$image,false)
 
 
