@@ -1,3 +1,16 @@
+## Connecting
+
+- First add your ssh key to the Digital Ocean account
+- Then you can ssh into the droplet at the IP address 45.55.144.150
+
+
+## Deployments
+Deployments should be easy because they are handled with the suggested docker setup, only tweaked to pull from our app repo instead of the Discourse repo
+- ssh into the DO droplet `ssh root@45.55.144.150`
+- cd to the app `cd /var/discourse/`
+- rebuild the app `./launcher rebuild app`
+
+
 ### About
 
 - [Docker](https://docker.com/) is an open source project to pack, ship and run any Linux application in a lighter weight, faster container than a traditional virtual machine.
