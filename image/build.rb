@@ -7,7 +7,7 @@ $version = "1.0.8"
 $docker_squash = "https://github.com/jwilder/docker-squash/releases/download/v0.0.11/docker-squash-linux-amd64-v0.0.11.tar.gz"
 
 $base_image = "samsaffron/discourse_base:#{$version}"
-$image = "samsaffron/discourse:#{$version}"
+$image = "atlanta-ember-org/discuss-atlanta-ember-app"
 
 if ENV["USER"] != "root"
   STDERR.puts "Build script must be ran as root due to docker-squash"
@@ -47,6 +47,6 @@ def build(path, tag, is_base)
 end
 
 build("base",$base_image,true)
-build("discourse",$image,false)
+build("discuss_atlanta_ember",$image,false)
 
 
